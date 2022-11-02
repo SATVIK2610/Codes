@@ -1,0 +1,300 @@
+Coding Blocks Qs
+
+Q1. Read Principal, Rate & Time and Print SI
+#include<iostream>
+using namespace std;
+
+int main(){
+    int p,r,t;
+    cin>>p>>r>>t;
+    cout<<(p*r*t)/100;
+    return 0;
+}
+
+Q2. Find the largest of 3 numbers.
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a,b,c;
+    cin>>a>>b>>c;
+    if (a>b){
+        if (a>c){
+            cout<<a<<" is the largest no."<<endl;
+        }
+        else{
+            cout<<c<<" is the largest no."<<endl;
+        }
+    }
+    else{
+        if (b>c){
+            cout<<b<<" is the largest no."<<endl;
+        }
+        else{
+            cout<<c<<" is the largest no."<<endl;
+        }
+    }
+    
+    return 0;
+}
+
+Q3.  Read a & d, print 10 numbers of form  a+d, a+2d, a+3d…
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a,d;
+    cin>>a>>d;
+    int num=a+d;
+    cout<<num;
+    for (int i=1;i<10;i++){
+        num+=d;
+        cout<<num<<" ";
+    }
+    return 0;
+}
+
+Q4. Print all the numbers form 1 to N.
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    for (int i=1;i<n;i++){
+        cout<<i<<" ";
+    }
+    return 0;
+}
+
+Q5. Print the average of 5 numbers.
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    int sum=0;
+    for (int i=1;i<=5;i++){
+        cin>>n;
+        sum+=n;
+    }
+    int avg=sum/5;
+    cout<<avg;
+}
+
+Q6. Given N, find sum of even numbers from 1 to  N 
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    int sum=0;
+    for (int i=2;i<=n;i+=2){
+        sum+=i;
+    }
+    cout<<sum;
+}
+
+Q7. Given N, check if its prime or not .
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    int c=0;
+    for (int i=1;i<=n;i++){
+        if (n%i==0){
+            c++;
+        }
+    }if (c==2){
+        cout<<n<<" is prime";
+    }else{
+        cout<<n<<" is not prime";
+    }
+}
+
+Q8. Find largest of N numbers
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n,num,max;
+    cin>>n;
+    for (int i=1;i<=n;i++){
+        cin>>num;
+        if (i==1){
+            max=num;
+        }
+        else{
+            if (num>max){
+                max=num;
+            }
+        }
+    }cout<<max;
+    
+}
+
+Q9. Print the below pattern 
+*
+**
+***
+****
+*****
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    for (int i=1;i<=n;i++){
+        for (int j=1;j<=i;j++){
+            cout<<"* ";
+        }cout<<endl;
+    }   
+}
+
+Q10.  Given a list of N integers, find mean,  maximum and minimum value. You would  be given first N, and then N integers of the  list.
+
+#include <iostream>
+#include <climits>
+
+using namespace std;
+
+int main(){
+    int n,num,min=INT_MAX,max=INT_MIN,mean,sum=0;
+    cin>>n;
+    for (int i=1;i<=n;i++){
+        cin>>num;
+        sum+=num;
+        if (num>max){
+            max=num;
+        }if (num<min){
+            min=num;
+        }
+    }
+    mean=sum/n;
+    cout<<mean<<" is the mean"<<endl;
+    cout<<max<<" is the max"<<endl;
+    cout<<min<<" is the min"<<endl;
+
+}
+
+Q11. Given a number check if it is a member of Fibonacci sequence or not.
+
+#include <iostream>
+using namespace std;
+int main() {
+    int a=0,b=1,sum=a+b,x;
+    cin>>x;
+    int flag=0;
+    while(sum<=x){
+        a=b;
+        b=sum;
+        sum=a+b;
+        if (a==x || b==x ||sum==x){
+            flag=1;
+        }
+    }if (flag==1){
+        cout<<x<<" is a part of fibbonaci series";
+    }else{
+        cout<<x<<" is not a part of fibbonaci series";
+    }return 0;
+}
+
+
+Q12. Read N, and print the following pattern
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n,x=1;
+    cin>>n;
+    for (int i=1;i<=n;i++){
+        for(int j=1;j<=i;j++){
+            cout<<x<<" ";
+            x++;
+        }cout<<endl;
+    }
+}
+
+Q13. Print the below pattern 
+         1
+       123
+     12345
+   1234567
+ 123456789
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    for (int i=1;i<=n;i++){
+        for(int j=1;j<=n-i;j++){
+            cout<<" ";
+        }
+        for(int k=1;k<=(i*2)-1;k++){
+            cout<<k;
+        }cout<<endl;
+    }
+}
+
+
+Q14. Read N and print the below pattern
+        1
+      232
+    34543
+  4567654
+567898765
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    for (int i=1;i<=n;i++){
+        for(int j=1;j<=n-i;j++){
+            cout<<" ";
+        }
+        for(int k=i;k<=(i*2)-1;k++){
+            cout<<k;
+        }
+        for(int l=(2*i-2);l>=i;l--){
+            cout<<l;
+        }
+        cout<<endl;
+    }
+}
+
+Q15. Given a number N, find sum of its digits .
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n,rem,sum=0;
+    cin>>n;
+    while(n>0){
+        rem=n%10;
+        sum+=rem;
+        n/=10;
+    }cout<<sum<<" is the sum of the digits";
+}
